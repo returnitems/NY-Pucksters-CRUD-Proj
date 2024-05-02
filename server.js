@@ -43,3 +43,4 @@ app.get('/roster/:playerId', async (req, res) => {
         selPlayer: selectedPlayer,
     });
 })
+
