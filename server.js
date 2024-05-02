@@ -28,6 +28,10 @@ app.get('/roster', async (req, res) => {
     });
 });
 
+app.get('/schedule', (req, res) => {
+    res.render('schedule.ejs');
+});
+
 app.get('/roster/newPlayer', (req, res) => {
     res.render('newPlayer.ejs');
 });
