@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= selPlayer.name %></title>
-</head>
-<%- include('./partials/nav.ejs') %>
-<body>
-    <h1><%= selPlayer.name %></h1>
-    <h4><%= selPlayer.position %></h4>
-</body>
+  </head>
+  <%- include('./partials/nav.ejs') %>
+  <body>
+    <h1>
+      <%= selPlayer.name %>
+      <span id="smallPositiion"><%= selPlayer.position %></span>
+    </h1>
+    <p><%= selPlayer.age %> years old</p>
+  </body>
 </html>
