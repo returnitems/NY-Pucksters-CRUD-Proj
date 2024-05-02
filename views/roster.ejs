@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Roster</title>
+</head>
+<body>
+    <h1>New York Pucksters H.C.</h1>
+    <ul>
+    <% fullRoster.forEach(player => { %>
+     <li><a href="/roster/<%= player._id %>"><%= player.name %></a></li>
+    <% }) %>
+    </ul>
+    <a href="/roster/newPlayer">Add New Player</a>
+</body>
+</html>
