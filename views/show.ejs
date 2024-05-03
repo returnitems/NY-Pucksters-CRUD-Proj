@@ -10,7 +10,12 @@
   
   <body>
     <h1><%= selPlayer.name %> <span id="smallPositiion"><%= selPlayer.position %></span></h1>
-    <p>Age <%= selPlayer.age %></p>
+    <p>Age: <%= selPlayer.age %></p>    
+    <p>Birthplace: <%= selPlayer.birthplace %></p>    
+    <p>Height: <%= selPlayer.height %></p>    
+    <p>Weight <%= selPlayer.weight %></p>    
+    <p>Drafted: <%= selPlayer.drafted %></p>    
+    <p>Shoots: <%= selPlayer.shoots %></p>    
   </body>
 
   <a href="/roster/<%= selPlayer._id %>/edit">Edit Player</a>
