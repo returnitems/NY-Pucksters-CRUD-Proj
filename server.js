@@ -5,11 +5,13 @@ dotenv.config();
 const methodOverride = require('method-override');
 const path = require('path');
 const Player = require('./model/playerSchema.js');
+const authController = require('./controllers/auth.js');
 
 const app = express();
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/auth', authController);
 
 mongoose.connect(process.env.MONGODB_URI);
 
