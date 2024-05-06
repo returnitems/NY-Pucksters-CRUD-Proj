@@ -1,3 +1,10 @@
+.teko-nav> {
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     background-image: url("https://i.imgur.com/i8G525H.png");
     background-repeat: no-repeat;
@@ -13,6 +20,37 @@ nav {
 }
 
 nav > a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Teko", sans-serif;
+}
+
+.player-list {
+    width: 150px;
+    /* margin: 20px auto; */
+    padding: 20px;
+    background-color: rgb(1, 3, 35);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75);
+}
+
+/* Individual player entries */
+.player {
+    padding: 12px 18px; /* Padding inside each player box */
+    margin-bottom: 10px; /* Space between player entries */
+    background-color: rgb(142, 169, 195); /* Darker shade for the player box */
+    border-radius: 5px; /* Rounded corners for each player box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+}
+
+.player:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+#signUp {
     color: aliceblue;
     text-decoration: none;
     font-size: 22px;

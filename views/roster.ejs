@@ -8,9 +8,9 @@
 <%- include('./partials/nav.ejs') %>
 <body>
     <h1>New York Pucksters H.C.</h1>
-    <ul>
+    <ul class="player-list">
     <% fullRoster.forEach(player => { %>
-     <li><a href="/roster/<%= player._id %>"><%= player.name %></a></li>
+     <li class="player"><a href="/roster/<%= player._id %>" ><%= player.name %></a></li>
     <% }) %>
     </ul>
     <a href="/roster/newPlayer">Add New Player</a>
