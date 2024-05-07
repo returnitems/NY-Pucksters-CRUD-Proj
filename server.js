@@ -7,9 +7,11 @@ const path = require('path');
 const Player = require('./model/playerSchema.js');
 const authController = require('./controllers/auth.js');
 const session = require('express-session');
+const morgan = require('morgan');
 
 const app = express();
 
+app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static('public'));
