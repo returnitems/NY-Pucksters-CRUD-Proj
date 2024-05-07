@@ -9,11 +9,11 @@ const authController = require('./controllers/auth.js');
 const session = require('express-session');
 
 const app = express();
-app.use(methodOverride('_method'));
+
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static('public'));
-app.use('/auth', authController);
+app.use(methodOverride('_method'));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -21,6 +21,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use('/auth', authController);
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -77,4 +78,3 @@ app.get('/roster/:playerId/edit', async (req, res) => {
         selPlayer: selectedPlayer,
     });
 });
-
