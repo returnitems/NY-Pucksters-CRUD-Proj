@@ -11,7 +11,8 @@ const app = express();
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, "/public")));
-app.use('/auth', authController);
+app.use(express.static('public'));
+app.use('/auth', authController); 
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -50,7 +51,7 @@ app.put('/roster/:playerId', async (req, res) => {
 
 app.delete('/roster/:playerId', async (req, res) => {
     await Player.findByIdAndDelete(req.params.playerId);
-    res.redirect('/roster');
+    res.redirect('/roster'); 
 });
 
 app.get('/roster/:playerId', async (req, res) => {

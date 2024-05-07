@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= selPlayer.name %></title>
@@ -9,19 +13,23 @@
   <%- include('./partials/nav.ejs') %>
   
   <body>
-    <h1><%= selPlayer.name %> <span id="smallPositiion"><%= selPlayer.position %></span></h1>
-    <p>Age: <%= selPlayer.age %></p>    
-    <p>Birthplace: <%= selPlayer.birthplace %></p>    
-    <p>Height: <%= selPlayer.height %></p>    
-    <p>Weight <%= selPlayer.weight %></p>    
-    <p>Drafted: <%= selPlayer.drafted %></p>    
-    <p>Shoots: <%= selPlayer.shoots %></p>    
+    <div class="playerShow">
+      <h1>
+        <%= selPlayer.name %> <span id="smallPositiion"><%= selPlayer.position %></span>
+      </h1>
+      <p>Age: <%= selPlayer.age %></p>
+      <p>Birthplace: <%= selPlayer.birthplace %></p>
+      <p>Height: <%= selPlayer.height %></p>
+      <p>Weight <%= selPlayer.weight %></p>
+      <p>Drafted: <%= selPlayer.drafted %></p>
+      <p>Shoots: <%= selPlayer.shoots %></p>
+    </div>
+  
+    <a href="/roster/<%= selPlayer._id %>/edit" class="editButton">Edit Player</a>
+    <br>
+    <br>
+    <form action="/roster/<%= selPlayer._id %>?_method=DELETE" method="POST">
+      <button>Remove <%= selPlayer.name %> from Roster</button>
+    </form>
   </body>
-
-  <a href="/roster/<%= selPlayer._id %>/edit">Edit Player</a>
-  <br>
-  <br>
-  <form action="/roster/<%= selPlayer._id %>?_method=DELETE" method="POST">
-    <button>Remove <%= selPlayer.name %> from Roster</button>
-  </form>
 </html>
