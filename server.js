@@ -6,13 +6,21 @@ const methodOverride = require('method-override');
 const path = require('path');
 const Player = require('./model/playerSchema.js');
 const authController = require('./controllers/auth.js');
+const session = require('express-session');
 
 const app = express();
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static('public'));
-app.use('/auth', authController); 
+app.use('/auth', authController);
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -21,7 +29,9 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-    res.render('homePage.ejs');
+    res.render('homePage.ejs', {
+        user: req.session.user,
+    });
 });
 
 app.get('/roster', async (req, res) => {

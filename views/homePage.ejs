@@ -9,8 +9,13 @@
     <title>NY Pucksters</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<%- include('./partials/nav.ejs') %>
 <body>
+    <% if (user) { %>
+        <%- include('./partials/nav.ejs') %>
+    <% } else { %>
+        <p class="toContinue">Please sign-in or sign-up to view team roster and schedule!</p>
+        <%- include('./partials/authNav.ejs') %>
+    <% } %>
     <h2 id="homeHeader">Welcome to the Official Site of the New York Pucksters</h2>
 </body>
 </html>

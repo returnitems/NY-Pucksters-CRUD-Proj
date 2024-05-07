@@ -41,6 +41,11 @@ label {
     gap: 10px;
 }
 
+.toContinue {
+    color: aliceblue;
+    font-family: "Teko", sans-serif;
+}
+
 /* nav {
     display: flex;
     justify-content: left;
