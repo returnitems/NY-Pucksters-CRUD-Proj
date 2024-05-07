@@ -23,7 +23,7 @@ router.post('/sign-up', async (req, res) => {
     req.body.password = hashedPassword;
 
     const user = await User.create(req.body);
-    res.send('Thanks for signing up!');
+    res.redirect('/');
 });
 
 router.get('/sign-in', (req, res) => {
@@ -48,5 +48,10 @@ router.post('/sign-in', async (req, res) => {
         username: userInDb.username,
     };
 
+    res.redirect('/');
+});
+
+router.get('/sign-out', (req, res) => {
+    req.session.destroy();
     res.redirect('/');
 });
