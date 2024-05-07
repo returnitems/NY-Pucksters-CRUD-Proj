@@ -19,6 +19,10 @@ router.post('/sign-up', async (req, res) => {
         return res.send('Passwords must match!');
     }
 
+    if (!req.body.username || !req.body.password || !req.body.confirmPassword) {
+        return res.render('sign-up.ejs');
+    }
+
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     req.body.password = hashedPassword;
 
@@ -42,6 +46,10 @@ router.post('/sign-in', async (req, res) => {
     );
     if (!validPassword) {
         return res.send('Login failed. Please try again.');
+    }
+
+    if (!req.body.username || !req.body.password) {
+        res.render('sign-in.ejs');
     }
 
     req.session.user = {
