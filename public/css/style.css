@@ -16,10 +16,32 @@ body {
 a {
     text-decoration: none;
     font-family: "Teko", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
+    color: aliceblue;
 }
 
-nav {
+h1 {
+    color: aliceblue;
+    font-family: "Teko", sans-serif;
+}
+
+label {
+    color: aliceblue;
+    font-family: "Teko", sans-serif;
+}
+
+.fullNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navMain {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+/* nav {
     display: flex;
     justify-content: left;
     gap: 10px;
@@ -30,7 +52,7 @@ nav > a {
     text-decoration: none;
     font-size: 22px;
     font-family: "Teko", sans-serif;
-}
+} */
 
 p {
     margin: auto;
@@ -84,7 +106,6 @@ p {
     border-radius: 10px;
     color: aliceblue;
     background-color: rgb(1, 3, 35);
-    box-shadow: 6px 6px rgba(0, 0, 0, 0.75);
 }
 
 #rosterHeader {
@@ -98,14 +119,15 @@ p {
 }
 
 #scheduleHeader {
+    display: flex;
+    justify-content: center;
     color: aliceblue;
     font-family: "Teko", sans-serif;
 }
 
-#signUp {
-    color: aliceblue;
-    text-decoration: none;
-    font-size: 22px;
+#scheduleBox {
+    display: flex;
+    justify-content: center;
 }
 
 #schedule {
@@ -118,4 +140,11 @@ p {
     border-radius: 10px;
     box-shadow: 6px 6px rgba(0, 0, 0, 0.75);
     background-color: rgba(0, 0, 0, 0.75);
+}
+
+#signUpForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 250px;
 }
