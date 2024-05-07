@@ -28,6 +28,22 @@ h1 {
 label {
     color: aliceblue;
     font-family: "Teko", sans-serif;
+    padding: 5px 0px;
+    font-size: 20px;
+}
+
+button {
+    margin: 10px 0px;
+    font-family: "Teko", sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(69, 78, 205, 0.5);
+    color: aliceblue;
+}
+
+p {
+    margin: auto;
 }
 
 .fullNav {
@@ -44,23 +60,6 @@ label {
 .toContinue {
     color: aliceblue;
     font-family: "Teko", sans-serif;
-}
-
-/* nav {
-    display: flex;
-    justify-content: left;
-    gap: 10px;
-}
-
-nav > a {
-    color: aliceblue;
-    text-decoration: none;
-    font-size: 22px;
-    font-family: "Teko", sans-serif;
-} */
-
-p {
-    margin: auto;
 }
 
 .player-list {
@@ -148,6 +147,13 @@ p {
 }
 
 #signUpForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 250px;
+}
+
+#signInForm {
     display: flex;
     flex-direction: column;
     justify-content: left;
