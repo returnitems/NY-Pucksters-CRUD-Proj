@@ -11,12 +11,12 @@
 </head>
 <%- include('./partials/nav.ejs') %>
 <body>
-    <h1>New York Pucksters H.C.</h1>
+    <h1 id="rosterHeader">New York Pucksters H.C. Current Roster</h1>
     <ul class="player-list">
     <% fullRoster.forEach(player => { %>
      <li class="player"><a href="/roster/<%= player._id %>" ><%= player.name %></a></li>
     <% }) %>
     </ul>
-    <a href="/roster/newPlayer">Add New Player</a>
+    <a href="/roster/newPlayer" id="addPlayer">Add New Player</a>
 </body>
 </html>
