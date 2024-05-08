@@ -27,7 +27,7 @@ app.use('/auth', authController);
 
 mongoose.connect(process.env.MONGODB_URI);
 
-app.listen(3000, () => {
+app.listen(3030, () => {
     console.log('Working fine!');
 });
 
