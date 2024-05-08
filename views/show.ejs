@@ -9,13 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= selPlayer.name %></title>
   </head>
-  <!-- Nav bar -->
   <%- include('./partials/nav.ejs') %>
   
   <body>
     <div class="playerShow">
       <h1>
-        <%= selPlayer.name %> <span id="smallPositiion"><%= selPlayer.position %></span>
+        <%= selPlayer.name %> <span id="smallPosition"><%= selPlayer.position %></span>
       </h1>
       <p>Age: <%= selPlayer.age %></p>
       <p>Birthplace: <%= selPlayer.birthplace %></p>
@@ -24,12 +23,13 @@
       <p>Drafted: <%= selPlayer.drafted %></p>
       <p>Shoots: <%= selPlayer.shoots %></p>
     </div>
-  
+    <br>
+    <br>
     <a href="/roster/<%= selPlayer._id %>/edit" class="editButton">Edit Player</a>
     <br>
     <br>
     <form action="/roster/<%= selPlayer._id %>?_method=DELETE" method="POST">
-      <button>Remove <%= selPlayer.name %> from Roster</button>
+      <button id="removeButton">Remove <%= selPlayer.name %> from Roster</button>
     </form>
   </body>
 </html>

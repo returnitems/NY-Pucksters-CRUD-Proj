@@ -4,46 +4,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+    <%- include('./partials/nav.ejs') %>
     <h1>New York Pucksters H.C.</h1>
     <h3>Edit <%= selPlayer.name %></h3>
-    <form action="/roster/<%= selPlayer._id %>?_method=PUT" method="POST">
+    <form action="/roster/<%= selPlayer._id %>?_method=PUT" method="POST" id="editForm">
         <div>
             <label for="name">Name: </label>
-            <input type="text" name="name" />
+            <input type="text" name="name" value="<%= selPlayer.name %>"/>
         </div>
         <div>
             <label for="age">Age: </label>
-            <input type="number" name="age" />
+            <input type="number" name="age" value="<%= selPlayer.age %>"/>
         </div>
         <div>
             <label for="position">Position: </label>
-            <input type="text" name="position" />
+            <input type="text" name="position" value="<%= selPlayer.position %>"/>
         </div>
         <div>
             <label for="height">Height (inches): </label>
-            <input type="number" name="height" />
+            <input type="number" name="height" value="<%= selPlayer.height %>"/>
         </div>
         <div>
             <label for="weight">Weight: </label>
-            <input type="number" name="weight" />
+            <input type="number" name="weight" value="<%= selPlayer.weight %>"/>
         </div>
         <div>
             <label for="shoots">Shoots: </label>
-            <input type="text" name="shoots" />
+            <input type="text" name="shoots" value="<%= selPlayer.shoots %>"/>
         </div>
         <div>
             <label for="birthplace">Birthplace: </label>
-            <input type="text" name="birthplace" />
+            <input type="text" name="birthplace" value="<%= selPlayer.birthplace %>"/>
         </div>
         <div>
             <label for="drafted">Drafted: </label>
-            <input type="text" name="drafted" />
+            <input type="text" name="drafted" value="<%= selPlayer.drafted %>"/>
         </div>
         <div>
             <button type="submit">Submit</button>

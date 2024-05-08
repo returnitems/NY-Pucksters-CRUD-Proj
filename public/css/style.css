@@ -25,6 +25,11 @@ h1 {
     font-family: "Teko", sans-serif;
 }
 
+h3 {
+    color: aliceblue;
+    font-family: "Teko", sans-serif;
+}
+
 label {
     color: aliceblue;
     font-family: "Teko", sans-serif;
@@ -99,6 +104,9 @@ p {
     text-decoration: none;
     font-size: 22px;
     font-family: "Teko", sans-serif;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(69, 78, 205, 0.5);
 }
 
 .game {
@@ -158,4 +166,34 @@ p {
     flex-direction: column;
     justify-content: left;
     width: 250px;
+}
+
+#playerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 350px;
+}
+
+#playerForm > div > input {
+    width: 100%;
+}
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 350px;
+}
+
+#editForm > div > input {
+    width: 100%;
+}
+
+#removeButton {
+    color: rgb(224, 24, 24);
+}
+
+#smallPosition {
+    font-size: 24px;
 }
